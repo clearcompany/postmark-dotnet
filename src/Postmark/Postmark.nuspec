@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package >
   <metadata>
-    <id>PostmarkDotNet</id>
+    <id>Cc.PostmarkDotNet</id>
     <version>$version$</version>
     <authors>Daniel Crenna, JP Toto, Andrew Theken</authors>
     <owners>Wildbit</owners>
