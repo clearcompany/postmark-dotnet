@@ -9,6 +9,10 @@
     <Version>3.0</Version>
     <Company>Wildbit, LLC.</Company>
     <Description>The official .net client for Postmark.</Description>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>Daniel Crenna, JP Toto, Andrew Theken</Authors>
+    <PackageLicenseUrl>https://github.com/wildbit/postmark-dotnet/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageId>Cc.PostmarkDotNet</PackageId>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|netstandard1.2|AnyCPU'">
