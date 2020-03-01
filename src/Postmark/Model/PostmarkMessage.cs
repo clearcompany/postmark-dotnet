@@ -21,8 +21,9 @@ namespace PostmarkDotNet
         /// <param name="textBody">The Plain Text Body to be used for the message, this may be null if HtmlBody is set.</param>
         /// <param name="htmlBody">The HTML Body to be used for the message, this may be null if TextBody is set.</param>
         /// <param name = "headers">A collection of additional mail headers to send with the message. (optional)</param>
-        public PostmarkMessage(string from, string to, string subject, string textBody, string htmlBody, HeaderCollection headers = null)
-            : base()
+        /// <param name="messageStream">The message stream used to send this message. If not provided, the default transactional stream "outbound" will be used. (optional)</param>
+        public PostmarkMessage(string from, string to, string subject, string textBody, string htmlBody,
+            HeaderCollection headers = null, string messageStream = null) : base()
         {
             
             From = from;
@@ -31,6 +32,7 @@ namespace PostmarkDotNet
             TextBody = textBody;
             HtmlBody = htmlBody;
             Headers = headers ?? new HeaderCollection();
+            MessageStream = messageStream ?? DefaultTransactionalStream;
         }
 
         /// <summary>

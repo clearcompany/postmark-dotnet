@@ -916,29 +916,32 @@ namespace PostmarkDotNet
 
         public async Task<PostmarkResponse> SendEmailWithTemplateAsync<T>(string templateAlias, T templateModel,
             string to, string from,
+            string messageStream = null,
             bool? inlineCss = null, string cc = null,
             string bcc = null, string replyTo = null,
             bool? trackOpens = null,
             IDictionary<string, string> headers = null,
             params PostmarkMessageAttachment[] attachments)
         {
-            return await InternalSendEmailWithTemplateAsync(templateAlias, templateModel, to, from, inlineCss, cc,
+            return await InternalSendEmailWithTemplateAsync(templateAlias, templateModel, messageStream, to, from, inlineCss, cc,
             bcc, replyTo, trackOpens, headers, attachments);
         }
 
         public async Task<PostmarkResponse> SendEmailWithTemplateAsync<T>(long templateId, T templateModel,
             string to, string from,
+            string messageStream = null,
             bool? inlineCss = null, string cc = null,
             string bcc = null, string replyTo = null,
             bool? trackOpens = null,
             IDictionary<string, string> headers = null,
             params PostmarkMessageAttachment[] attachments)
         {
-            return await InternalSendEmailWithTemplateAsync(templateId, templateModel, to, from, inlineCss, cc,
+            return await InternalSendEmailWithTemplateAsync(templateId, templateModel, messageStream, to, from, inlineCss, cc,
             bcc, replyTo, trackOpens, headers, attachments);
         }
 
         private async Task<PostmarkResponse> InternalSendEmailWithTemplateAsync<T>(object templateReference, T templateModel,
+            string messageStream,
             string to, string from,
             bool? inlineCss = null, string cc = null,
             string bcc = null, string replyTo = null,
@@ -954,6 +957,7 @@ namespace PostmarkDotNet
                 email.TemplateAlias = (string)templateReference;
             }
             email.TemplateModel = templateModel;
+            email.MessageStream = messageStream;
             email.To = to;
             email.From = from;
             if (inlineCss.HasValue)
