@@ -32,7 +32,7 @@ namespace PostmarkDotNet
             TextBody = textBody;
             HtmlBody = htmlBody;
             Headers = headers ?? new HeaderCollection();
-            MessageStream = messageStream ?? DefaultTransactionalStream;
+            MessageStream = messageStream;
         }
 
         /// <summary>

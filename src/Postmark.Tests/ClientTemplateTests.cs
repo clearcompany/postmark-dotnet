@@ -125,8 +125,7 @@ namespace Postmark.Tests
         public async void ClientCanSendWithTemplate()
         {
             var template = await _client.CreateTemplateAsync("test template name", "test subject", "test html body");
-            var sendResult = await _client.SendEmailWithTemplateAsync(template.TemplateId, new { name = "Andrew" }, 
-                WRITE_TEST_SENDER_EMAIL_ADDRESS, WRITE_TEST_SENDER_EMAIL_ADDRESS, false, messageStream: PostmarkMessageBase.DefaultTransactionalStream);
+            var sendResult = await _client.SendEmailWithTemplateAsync(template.TemplateId, new { name = "Andrew" }, WRITE_TEST_SENDER_EMAIL_ADDRESS, WRITE_TEST_SENDER_EMAIL_ADDRESS, false);
             Assert.NotEqual(Guid.Empty, sendResult.MessageID);
         }
 
@@ -153,8 +152,7 @@ namespace Postmark.Tests
         public async void ClientCanSendTemplateWithStringModel()
         {
             var template = await _client.CreateTemplateAsync("test template name", "test subject", "test html body");
-            var sendResult = await _client.SendEmailWithTemplateAsync(template.TemplateId, "{ \"name\" : \"Andrew\" }", 
-                WRITE_TEST_SENDER_EMAIL_ADDRESS, WRITE_TEST_SENDER_EMAIL_ADDRESS, false, messageStream: PostmarkMessageBase.DefaultTransactionalStream);
+            var sendResult = await _client.SendEmailWithTemplateAsync(template.TemplateId, "{ \"name\" : \"Andrew\" }", WRITE_TEST_SENDER_EMAIL_ADDRESS, WRITE_TEST_SENDER_EMAIL_ADDRESS, false);
             Assert.NotEqual(Guid.Empty, sendResult.MessageID);
         }
 
