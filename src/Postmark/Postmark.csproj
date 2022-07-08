@@ -6,7 +6,7 @@
     <PackageIconUrl>https://github.com/wildbit/postmark-dotnet/raw/master/postmark-logo.png</PackageIconUrl>
     <RepositoryUrl>https://github.com/wildbit/postmark-dotnet.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <Version>3.0.2</Version>
+    <Version>3.0.3</Version>
     <Company>Wildbit, LLC.</Company>
     <Description>The official .net client for Postmark.</Description>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
