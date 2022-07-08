@@ -16,7 +16,7 @@ namespace Postmark.Tests
 
         protected override void Setup()
         {
-            _adminClient = new PostmarkAdminClient(WRITE_ACCOUNT_TOKEN, BASE_URL);
+            _adminClient = new PostmarkAdminClient(WRITE_ACCOUNT_TOKEN, apiBaseUri: BASE_URL);
             _server = _adminClient.CreateServerAsync($"integration-test-suppressions-{Guid.NewGuid()}").Result;
             _client = new PostmarkClient(_server.ApiTokens.First(), BASE_URL);
         }
