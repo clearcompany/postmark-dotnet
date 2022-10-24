@@ -59,6 +59,7 @@ namespace PostmarkDotNet.Model
         public string TextBody { get; set; }
         public string HtmlBody { get; set; }
         public string StrippedTextReply { get; set; }
+        public string BlockedReason { get; set; }
     }
 
     public class Attachment
