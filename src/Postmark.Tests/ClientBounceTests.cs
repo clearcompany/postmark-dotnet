@@ -10,7 +10,7 @@ namespace Postmark.Tests
     {
         protected override void Setup()
         {
-            _client = new PostmarkClient(READ_SELENIUM_TEST_SERVER_TOKEN);
+            Client = new PostmarkClient(WriteTestServerToken, BaseUrl);
         }
 
         [Fact]
